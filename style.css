@@ -1,0 +1,128 @@
+/* 커스텀 CSS - Tailwind로 커버되지 않는 스타일 */
+
+/* 부드러운 스크롤 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 페이드인 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 네비게이션 바 스크롤 효과 */
+#navbar {
+    background-color: transparent;
+}
+
+#navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark #navbar.scrolled {
+    background-color: rgba(17, 24, 39, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 네비게이션 링크 활성화 */
+.nav-link.active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.dark .nav-link.active {
+    color: #60a5fa;
+}
+
+/* 스크롤바 커스터마이징 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* 히어로 섹션 배경 */
+#home {
+    background: #ffffff;
+}
+
+.dark #home {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+/* 애니메이션 지연 */
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+/* 반응형 폰트 크기 */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* 다크모드 전환 애니메이션 */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 호버 효과 부드럽게 */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* 프로젝트 카드 이미지 그라디언트 효과 */
+.project-gradient {
+    transition: transform 0.3s ease;
+}
+
+.project-gradient:hover {
+    transform: scale(1.05);
+}
